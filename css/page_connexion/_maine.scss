@@ -6,9 +6,6 @@
 
 .col-1{
     @include center;
-    .logo-mobile{
-        display: none;
-    }
     
     @media (min-width:1000px) {
         .logo{
@@ -19,11 +16,11 @@
     }
     @media (max-width:768px) {
         .logo{
-            display: none;
+        
+        svg{
+            width: 300px;;
         }
-        .logo-mobile{
-            display: block;
-        }
+    }
         
     }
 }
@@ -41,13 +38,13 @@
         grid-template-columns: 1fr;
         grid-gap: 25px;
         border-radius: 20px;
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        box-shadow: var( --primary-box-shadow);
         @media (max-width:768px) {
             width: 100%; 
             border-radius:0px;
             
         }
-        .box-connexion-item-3{
+    .box-connexion-item-3{
             form{
                 label{
                     font-size: 12px;
@@ -57,7 +54,12 @@
                         border-radius: 10px;
                         border: none;
                         background-color: var(--second-color);
+                        @media (max-width:768px) {
+                            width: 250px;
+                            
+                        }
                     }
+                    
                 }
                 button{
                     padding: 10px 40px;

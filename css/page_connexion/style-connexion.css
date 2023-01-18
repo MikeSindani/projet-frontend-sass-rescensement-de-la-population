@@ -22,6 +22,7 @@
   .container-connexion {
     grid-template-columns: repeat(1, 1fr);
     grid-template-rows: 1% minmax(500px, auto) 7%;
+    background-position: 10% 10%;
   }
 }
 .container-connexion header {
@@ -56,9 +57,6 @@
   justify-content: center;
   align-items: center;
 }
-.container-connexion main .col-1 .logo-mobile {
-  display: none;
-}
 @media (min-width: 1000px) {
   .container-connexion main .col-1 .logo {
     position: relative;
@@ -67,11 +65,8 @@
   }
 }
 @media (max-width: 768px) {
-  .container-connexion main .col-1 .logo {
-    display: none;
-  }
-  .container-connexion main .col-1 .logo-mobile {
-    display: block;
+  .container-connexion main .col-1 .logo svg {
+    width: 300px;
   }
 }
 .container-connexion main .col-2 {
@@ -89,7 +84,7 @@
   grid-template-columns: 1fr;
   grid-gap: 25px;
   border-radius: 20px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  box-shadow: var(--primary-box-shadow);
 }
 @media (max-width: 768px) {
   .container-connexion main .col-2 .box-connexion {
@@ -106,6 +101,11 @@
   border-radius: 10px;
   border: none;
   background-color: var(--second-color);
+}
+@media (max-width: 768px) {
+  .container-connexion main .col-2 .box-connexion .box-connexion-item-3 form label input {
+    width: 250px;
+  }
 }
 .container-connexion main .col-2 .box-connexion .box-connexion-item-3 form button {
   padding: 10px 40px;

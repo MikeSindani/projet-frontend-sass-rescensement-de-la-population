@@ -14,8 +14,15 @@
   --secondary-font-family: 'Quicksand', sans-serif;
   // fontsize 
   --primary-font-size: 16px; 
-   
-
+  --secondary-font-size: 12px;
+  // box box-shadow
+  --primary-box-shadow:0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 5px 0 rgba(0, 0, 0, 0.1);
+  // border raduis 
+  --border-raduis:10px; 
+  
+}
+.body{
+  background-color: var(--second-color);
 }
 
 *{
@@ -29,4 +36,5 @@ body{
 }
 a{
     text-decoration: none;
+    color: black;
 }

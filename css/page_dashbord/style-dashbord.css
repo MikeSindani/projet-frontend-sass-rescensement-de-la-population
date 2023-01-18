@@ -1,0 +1,141 @@
+.container-dashbord header .drapeau_congo {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 10px;
+}
+.container-dashbord header .drapeau_congo .rouge {
+  background-color: var(--rouge);
+}
+.container-dashbord header .drapeau_congo .bleu {
+  background-color: var(--bleu);
+}
+.container-dashbord header .drapeau_congo .jaune {
+  background-color: var(--jaune);
+}
+.container-dashbord main {
+  position: relative;
+  display: grid;
+  grid-template-columns: 250px auto;
+}
+.container-dashbord main .col-navbar {
+  width: 250px;
+  /* debut de la sidebar */
+  /* fin de la sidebar */
+}
+.container-dashbord main .col-navbar .sidebar {
+  /*left: -250px;*/
+  height: 100vh;
+  background-color: var(--third-color);
+  width: 250px;
+  position: fixed;
+  overflow-y: hidden;
+  transition: 0.6s ease;
+  transition-property: left;
+  /* debut menu side bar */
+  /* fin menu sidebar */
+  /* debut about sidebar */
+}
+.container-dashbord main .col-navbar .sidebar .logo {
+  margin: 30px 0;
+}
+.container-dashbord main .col-navbar .sidebar .menu .items {
+  line-height: 60px;
+  padding: 0 15px;
+  transition: 0.5s ease;
+  cursor: pointer;
+  position: relative;
+}
+.container-dashbord main .col-navbar .sidebar .menu .items:hover {
+  background-color: var(--second-color);
+}
+.container-dashbord main .col-navbar .sidebar .menu .items i {
+  margin-right: 15px;
+}
+.container-dashbord main .col-navbar .sidebar .menu .items .dropdown {
+  position: absolute;
+  right: 0;
+  margin: 20px;
+  transition: 0.6s ease;
+}
+.container-dashbord main .col-navbar .sidebar .menu .items .sub-menu {
+  display: none;
+  margin: 0 30px;
+}
+.container-dashbord main .col-navbar .sidebar .help {
+  margin: 50px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container-dashbord main .col-navbar .sidebar .help .items-helps {
+  padding: 7px 15px;
+  border-radius: 50%;
+  border: 2px solid black;
+  margin: 0 10px;
+  cursor: pointer;
+}
+.container-dashbord main .col-navbar .sidebar .help .items-helps:hover {
+  background-color: var(--second-color);
+  border: none;
+}
+.container-dashbord main .col-dashbord {
+  display: grid;
+  grid-template-rows: 100px minmax(100vh auto);
+  grid-template-columns: 1fr;
+  padding: 15px;
+  /* debut de la adminbar */
+  /* fin de la la adminbar */
+}
+@media (max-width: 768px) {
+  .container-dashbord main .col-dashbord {
+    grid-template-rows: 100px minmax(100vh auto);
+    grid-template-columns: auto;
+  }
+}
+.container-dashbord main .col-dashbord .adminbar {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+.container-dashbord main .col-dashbord .adminbar .admin-panel {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  background-color: var(--third-color);
+  flex-grow: 0.7;
+  align-items: center;
+  border-radius: var(--border-raduis);
+  box-shadow: var(--primary-box-shadow);
+}
+.container-dashbord main .col-dashbord .adminbar .admin-panel .admin-name .name {
+  font-weight: bold;
+}
+.container-dashbord main .col-dashbord .adminbar .admin-panel .admin-name .poste {
+  font-size: var(--secondary-font-size);
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .close-sidebar-mobi {
+    left: -250px !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .close-sidebar {
+    left: -250px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .close-main-mobi {
+    grid-template-columns: 0px auto !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .close-main {
+    grid-template-columns: 0px auto !important;
+  }
+}/*# sourceMappingURL=style-dashbord.css.map */
