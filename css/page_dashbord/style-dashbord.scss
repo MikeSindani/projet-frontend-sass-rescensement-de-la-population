@@ -36,16 +36,21 @@
     .close-sidebar-mobi {
         @media (max-width:768px){
         left:-250px !important;
+        animation-name: sideshow;
+        animation-duration: 4s;
       }
     }
     .close-sidebar {
         @media (min-width:768px){
         left:-250px !important;
+        animation-name: sideshow;
+        animation-duration: 4s;
       }
     }
     .close-main-mobi {
         @media (max-width:768px){
             grid-template-columns: 0px auto !important;
+
           }
        
     } 
@@ -54,5 +59,21 @@
             grid-template-columns: 0px auto !important;
           }
        
+    } 
+    .hover-menu-activeted{
+        background-color: var(--primary-color);
+        color: white;
+    }
+
+    @keyframes sideshow {
+        0%   {left:-250px;}
+        25%  {left:-125px;}
+        50%  {left:0px;}
+        75%  {left:125px;}
+        100% {left:250px;}
+      }
+
+      .rotate{
+        transform:rotate(90deg);
     } 
 
