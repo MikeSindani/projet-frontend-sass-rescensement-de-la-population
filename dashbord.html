@@ -18,17 +18,23 @@
     <title>Document</title>
 </head>
 <body class="body">
+      <!--DEBUT DU HAEDER -->
+      <header>
+        <div class="drapeau_congo">
+            <div class="rouge"></div>
+            <div class="bleu"></div>
+            <div class="jaune"></div>
+        </div>
+        <div class="message" style="background-color: var(--bleu); display: none;">
+            <div class="msg">Bienvenue </div>
+            <div class="close-msg">Fermer</div>
+        </div>
+    </header>
+    <!--FIN DU HAEDER -->
     <!--DEBUT DU CONATINER -->
     <div class="container-dashbord">
-        <!--DEBUT DU HAEDER -->
-       <header>
-           <div class="drapeau_congo">
-               <div class="rouge"></div>
-               <div class="bleu"></div>
-               <div class="jaune"></div>
-           </div>
-       </header>
-       <!--FIN DU HAEDER -->
+      
+        
         <!--DEBUT DU MAIN -->
        <main class="close-main-mobi"> 
         <!-- debut de colonne side bar  -->
@@ -104,6 +110,7 @@
          <!-- fin de colonne side bar  -->
           <!-- debut de colonne dashbord  -->
             <div class="col-dashbord">
+                <!--partie adsmin bar -->
                 <div class="adminbar">
                     <div class="menu-burger">
                         <button class="hamburger hamburger--elastic " type="button">
@@ -128,7 +135,46 @@
                         <i class="fa-solid fa-right-from-bracket"></i>
                     </div>
                 </div>
-                <div class="home"></div>
+                <!-- dubut partie home du dashbord -->
+                <div class="home-page box-page">
+                    <!-- dubut home-box-1 -->
+                    <div class="home-box-1">
+                        <div class="home-box-1-part-1">
+                            <img src="img/person-team-svgrepo-com.svg" alt="" height="35" width="35">
+                        </div>
+                        <div class="home-box-1-part-2"><h2>Population total de Lubumbashi:</h2></div>
+                        <div class="home-box-1-part-3"><h2> 4 370 000 </h2></div>
+                    </div>
+                    
+                    <!-- dubut home-box-2 -->
+                    <div class="home-box-2">
+                        <div class="home-box-2-part-1" style="height: 150px;">
+                            <canvas id="Chart-by-humain"></canvas>
+                        </div>
+                        <div class="home-box-2-part-2" style="height: 150px;">
+                            <canvas id="Chart-by-humain-2"></canvas>
+                        </div>
+                        <div class="home-box-2-part-3">
+                            <div class="homme">
+                                <div class="M sexe">Homme</div>
+                                <div class="stat-numbers"><h2>120000</h2></div>
+                            </div>
+                            <div class="femme">
+                                <div class="F sexe">Femme</div>
+                                <div class="stat-numbers"><h2>190000</h2></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- dubut home-box-3 -->
+                    <div class="home-box-3">
+                        
+                        <div class="home-box-3-part-titre"><h2>Par Commune</h2></div>
+                        <div class="home-box-3-part-canva" style="height: 350px;" >
+                            <canvas id="Chart-by-Commune"></canvas>
+                        </div>
+                    </div>
+                </div>
 
             </div>
          <!-- fi de colonne dashbord  -->
@@ -138,6 +184,10 @@
    </div>
 <!--FIN DU CONATINER -->
 
-<script src="js/script-dashbord.js"></script>    
+<!--DEBUT DES SCRIPTS -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="js/script-dashbord.js"></script>   
+
+<!--FIN DES SCRIPTS --> 
 </body>
 </html>

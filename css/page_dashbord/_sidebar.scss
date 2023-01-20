@@ -22,6 +22,7 @@
                 &:hover{
                     background-color: var(--second-color);
                     
+                    
                 }
                 i{
                     margin-right: 15px;
@@ -35,6 +36,11 @@
                 .sub-menu-1,.sub-menu-2{
                     display: none;
                     margin: 0 50px;
+                    .sub-item-menu{
+                        &:hover{
+                            font-weight: bold;
+                        }
+                    }
                     
                 }
                 

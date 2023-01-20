@@ -1,8 +1,19 @@
-
+/* DEBUT DE HEADER */ 
+header{
+    display: grid;
+    grid-template-columns: 1fr;
+    //grid-template-rows: 10px 100px;
+    grid-template-rows: 10px auto !important;
+    @import "hearder";
+    
+}
+.close-msg-header{
+  grid-template-rows: 10px auto !important;
+}
+/* FIN DE HEADER */ 
 .container-dashbord{
-    header{
-        @import "hearder";
-    }
+    
+    /* DEBUT DE MAIN */ 
     main{
         position: relative;
         display :grid;
@@ -16,23 +27,37 @@
         .col-dashbord{
             
             display: grid;
-            grid-template-rows: 100px minmax(100vh auto);
+            grid-template-rows: 100px 1fr;
             grid-template-columns: 1fr;
-            padding: 15px;
+            padding: 10px;
             @media (max-width:768px){
-                grid-template-rows: 100px minmax(100vh auto);
-                grid-template-columns: auto;
+                grid-template-rows: 100px auto;
+                grid-template-columns: 1fr;
             }
+
             /* debut de la adminbar */ 
             @import "adminbar";
             /* fin de la la adminbar */ 
+             /* debut de la boxpage*/ 
+             .box-page{
+                @media (min-width: 768px){
+                    padding: var(--padding);
+                }
+                
+             }
+            
+                /* debut de la homepage*/ 
+                @import "homepage";
+                /* fin de la la homepage */ 
+
+             /* fin de la la boxpage */ 
         } 
         
 
     }
 }
 
-
+ /* FIN DE MAIN */ 
     .close-sidebar-mobi {
         @media (max-width:768px){
         left:-250px !important;
@@ -63,6 +88,7 @@
     .hover-menu-activeted{
         background-color: var(--primary-color);
         color: white;
+        font-weight: bold;
     }
 
     @keyframes sideshow {
@@ -76,4 +102,19 @@
       .rotate{
         transform:rotate(90deg);
     } 
+/* DARK MODE */ 
+    .darkmode--activated p, .darkmode--activated li {
+        color: #000;
+      }
+      
+      .button {
+        isolation: isolate;
+      }
+      
+      .darkmode--activated .logo {
+        mix-blend-mode: difference;
+      }
+      .darkmode-layer, .darkmode-toggle {
+        z-index: 500;
+      }
 
