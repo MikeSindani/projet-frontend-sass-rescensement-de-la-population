@@ -25,19 +25,34 @@ function myFunction(x) {
   x.addListener(myFunction) // Attach listener function on state changes
 
 /*! code pour gerer les submenu du sidebar */ 
-const subBtn1 = document.querySelector(".sub-btn-1")
-const subMenu1 = document.querySelector(".sub-menu-1")
-const subBtn2 = document.querySelector(".sub-btn-2")
-const subMenu2 = document.querySelector(".sub-menu-2")
+const home_btn = document.querySelector("#btn_home")
+const section_home = document.querySelector("#section_home")
+const section_stats = document.querySelector("#section_stats")
+const sub_btn_stats = document.querySelector(".sub-btn-1")
+const subMenuStats = document.querySelector(".sub-menu-1")
+const sub_btn_agent = document.querySelector(".sub-btn-2")
+const subMenuAgent = document.querySelector(".sub-menu-2")
 const dropdown = document.querySelector(".dropdown")
-subBtn1.addEventListener("click",()=>{
-    subMenu1.classList.toggle("sub-menu-1")
+home_btn.addEventListener("click",()=>{
+   section_home.style.display = "grid"
+   section_stats.style.display = "none"
+   home_btn.classList.add("bg-primary-color")
+   sub_btn_stats.classList.remove("bg-primary-color")
+})
+sub_btn_stats.addEventListener("click",()=>{
+    subMenuStats.classList.toggle("sub-menu-1")
     dropdown.classList.toggle("rotate")
+    home_btn.classList.remove("bg-primary-color")
+    sub_btn_stats.classList.add("bg-primary-color")
+    section_home.style.display = "none"
+    section_stats.style.display = "grid"
+
 
 })
-subBtn2.addEventListener("click",()=>{
-    subMenu2.classList.toggle("sub-menu-2")
+sub_btn_agent.addEventListener("click",()=>{
+    subMenuAgent .classList.toggle("sub-menu-2")
     dropdown.classList.toggle("rotate")
+    sub_btn_agent.classList.toggle("bg-secondary-color")
 
 })
 /* fin de side bar menu hamberger */ 
@@ -102,6 +117,27 @@ const ctx = document.getElementById('Chart-by-Commune');
 
   new Chart(ctx3, {
     type: 'bar',
+    data: {
+      labels: ['Homme', 'Femme'],
+      datasets: [{
+        data: [120000, 190000],
+        borderWidth: 1,
+        backgroundColor: ['#3098FF','#F8DB34']
+      }]
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    }
+  });
+
+  const ctx4 = document.getElementById('Chart-by-stats');
+
+  new Chart(ctx4, {
+    type: 'pie',
     data: {
       labels: ['Homme', 'Femme'],
       datasets: [{

@@ -1,0 +1,45 @@
+@mixin background-image-cat{
+    background-attachment: fixed;
+    color: white;
+    padding: 0;
+}
+
+.stats-page{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    
+   .stats-box-1{
+    @include flex-center(center);
+    background-color: var(--primary-color);
+    color: white;
+    grid-column: 1 / 3;
+    @media (max-width: 768px){
+        flex-direction: column;
+    }
+    gap: 10px;  
+   }
+    .overlay{
+        background-color: rgba(0, 0, 0, 0.562);
+        height:100%;
+        padding: var(--padding);
+        border-radius: var(--border-raduis);
+    }
+    .stats-box-cat-1{
+        background-image: url('https://images.pexels.com/photos/2833373/pexels-photo-2833373.png?auto=compress&cs=tinysrgb&w=400');
+        @include background-image-cat();
+        
+    }
+    .stats-box-cat-2{
+        background-image: url('https://media.istockphoto.com/id/184601450/photo/international-flags.jpg?s=612x612&w=is&k=20&c=s4zb8umsXMHfBZo-CkypfM8e3DgUswsxrbKCQkXUIUk=');
+        @include background-image-cat();
+    }
+    .stats-box-cat-3{
+        background-image: url('https://images.pexels.com/photos/5212345/pexels-photo-5212345.jpeg?auto=compress&cs=tinysrgb&w=400');
+        @include background-image-cat();
+    }
+    .stats-box-cat-4{
+        background-image: url('https://images.pexels.com/photos/12706222/pexels-photo-12706222.jpeg?auto=compress&cs=tinysrgb&w=400');
+        @include background-image-cat();
+    }
+}

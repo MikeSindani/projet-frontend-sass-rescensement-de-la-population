@@ -21,8 +21,8 @@
                 position: relative;
                 &:hover{
                     background-color: var(--second-color);
-                    
-                    
+                    color: black;
+                    font-weight: 500;         
                 }
                 i{
                     margin-right: 15px;
@@ -32,20 +32,37 @@
                     right: 0;
                     margin: 20px;
                     transition: .6s ease;
-                }
-                .sub-menu-1,.sub-menu-2{
-                    display: none;
-                    margin: 0 50px;
-                    .sub-item-menu{
+                }     
+
+            }
+            /* sub menu */ 
+            .sub-menu-1,.sub-menu-2{
+                display: none;
+                margin: 0 50px;
+               
+                .sub-item-menu{
                         &:hover{
                             font-weight: bold;
                         }
-                    }
-                    
+                   }      
+               }
+               .sub-menu{
+                
+                line-height: 50px;
+                background-color: var(--second-color);
+                .sub-item-menu{
+                    position: relative;
+                    left: 20px;
+                    transition: all 0.6ms ease-in-out;
+                    cursor: pointer;
+                    &:hover{
+                            font-weight: bold;
+                        }
                 }
                 
 
-            }
+               }
+            /* sub menu */ 
         }
         /* fin menu sidebar */ 
         /* debut about sidebar */ 
@@ -71,3 +88,20 @@
 
         }
     }
+/* code pour passe d'un ongle a un autre a travers display none */
+.menu-activeted{
+  display: none;
+} 
+.bg-secondary-color{
+    background-color: var(--second-color);
+}
+.bg-primary-color{
+    background-color: var(--primary-color);
+    color: white;
+}
+.d-grid{
+    display: grid !important;
+}
+.d-flex{
+    display: flex !important;
+}

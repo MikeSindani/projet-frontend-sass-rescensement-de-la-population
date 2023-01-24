@@ -69,6 +69,9 @@
                     color: var(--third-color);
                     position: relative;
                     left: 10%;
+                    @media (max-width:768px){
+                        left: 15%;
+                    }
                     cursor: pointer;
                     
             }

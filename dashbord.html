@@ -75,27 +75,30 @@
                           </svg>
                     </div>
                     <div class="menu">
-                        <div class="items  hover-menu-activeted">  <i class="fas fa-house"></i> Accuiel</div>
-                        <div class="items sub-btn-1">  <i class="fas fa-table"></i> Statistiques
+                        <!--botton home -->
+                        <div id="btn_home" class="items  bg-primary-color">  <i class="fas fa-house"></i> Accuiel</div>
+                        <!--botton home -->
+                        <div class="items sub-btn-1">  <i class="fas fa-table"></i> <span>Statistiques</span> 
                             <!--dropdown 01-->
                             <i class="fas fa-angle-right dropdown"></i>
+                        </div>
                             <!--dropdown  sub menu-->
-                            <div class="sub-menu-1">
+                            <div class="sub-menu sub-menu-1" >
                                 <div class="sub-item-menu">Population</div>
                                 <div class="sub-item-menu">Education</div>
                                 <div class="sub-item-menu">Migration</div>
                                 <div class="sub-item-menu">Etat Civil</div>
                             </div>
-                        </div>
+                        
                         <div class="items">  <i class="fas fa-eye"></i></i> Suivi de Rescensement</div>
                         <div class="items sub-btn-2">  <i class="fas fa-people-group"></i></i> Gestion des Agents
                             <!--dropdown 01-->
-                            <i class="fas fa-angle-right dropdown"></i>
-                            <!--dropdown  sub menu-->
-                            <div class="sub-menu-2">
-                                <div class="sub-item-menu">Agent Resenceur</div>
-                                <div class="sub-item-menu">Agent Controleur</div>           
-                            </div>
+                            <i class="fas fa-angle-right dropdown"></i>      
+                        </div>
+                        <!--dropdown  sub menu-->
+                        <div class="sub-menu sub-menu-2">
+                            <div class="sub-item-menu">Agent Resenceur</div>
+                            <div class="sub-item-menu">Agent Controleur</div>           
                         </div>
                         <div class="items"><i class="fas fa-map-location-dot"></i> Gestion des Zones</div>
                     </div>
@@ -112,6 +115,7 @@
             <div class="col-dashbord">
                 <!--partie adsmin bar -->
                 <div class="adminbar">
+
                     <div class="menu-burger">
                         <button class="hamburger hamburger--elastic " type="button">
                             <span class="hamburger-box">
@@ -119,6 +123,7 @@
                             </span>
                           </button>
                     </div>
+
                     <div class="admin-panel">
                         <div class="armoirie">
                             <img src="img/Armoirie png.png" alt="armoirie du congo" height="30" width="30">
@@ -131,14 +136,17 @@
                             <img src="img/drapequ du congo.png" alt="drapeau du congo" height="30"  width="30">
                         </div>
                     </div>
+
                     <div class="deconnexion-settings">
-                        <i class="fa-solid fa-right-from-bracket"></i>
+                        <img src="img/logout-svgrepo-com.svg" alt="" height="45" width="45">
                     </div>
+
                 </div>
-                <!-- dubut partie home du dashbord -->
-                <div class="home-page box-page">
+                
+                <!-- debut partie stat page du dashbord -->
+                <div id="section_home" class="home-page box-page " style="display: none;">
                     <!-- dubut home-box-1 -->
-                    <div class="home-box-1">
+                    <div class="home-box-1 box">
                         <div class="home-box-1-part-1">
                             <img src="img/person-team-svgrepo-com.svg" alt="" height="35" width="35">
                         </div>
@@ -147,7 +155,7 @@
                     </div>
                     
                     <!-- dubut home-box-2 -->
-                    <div class="home-box-2">
+                    <div class="home-box-2 box">
                         <div class="home-box-2-part-1" style="height: 150px;">
                             <canvas id="Chart-by-humain"></canvas>
                         </div>
@@ -167,7 +175,7 @@
                     </div>
 
                     <!-- dubut home-box-3 -->
-                    <div class="home-box-3">
+                    <div class="home-box-3 box">
                         
                         <div class="home-box-3-part-titre"><h2>Par Commune</h2></div>
                         <div class="home-box-3-part-canva" style="height: 350px;" >
@@ -175,9 +183,123 @@
                         </div>
                     </div>
                 </div>
-
+                <!-- fin partie home du dashbord -->
+                <!-- debut partie stats du dashbord -->
+                <div id="section_stats" class="stats-page box-page " style="display: none;">
+                    <!-- dubut home-box-1 -->
+                        <div class="stats-box-1 box">
+                            <div class="stats-box-1-part-1">
+                                <img src="img/person-team-svgrepo-com.svg" alt="" height="35" width="35">
+                            </div>
+                            <div class="stats-box-1-part-2"><h2>Population total de Lubumbashi:</h2></div>
+                            <div class="stats-box-1-part-3"><h2> 4 370 000 </h2></div>
+                        </div>
+                        <!--POPULATION-->
+                        <div class="stats-box-cat-1 box">
+                            <div class="overlay">
+                                <div class="type">Population</div>
+                               <div><h1 class="nbrs-Population">2000000</h1></div>
+                            </div>  
+                        </div>
+                        <!-- MIGRATION -->
+                        <div class="stats-box-cat-2 box">
+                            <div class="overlay">
+                                <div class="type">Migration</div>
+                                <div><h1 class="nbrs-migration">120000</h1></div>
+                            </div>    
+                        </div>
+                        <!--EDUCATION-->
+                        <div class="stats-box-cat-3 box">
+                            <div class="overlay">
+                                <div class="type">Education</div>
+                                <div><h1 class="nbrs-education">250000</h1></div>
+                            </div> 
+                        </div>
+                        <!--ETAT CIVIL -->
+                        <div class="stats-box-cat-4 box">
+                            <div class="type">Etat Civil</div>
+                            <div><h1 class="nbrs-civil">600000</h1></div>
+                        </div>     
+                   
+                </div>
+                <!-- fin partie stats du dashbord -->
+                <!-- debut partie stats population du dashbord -->
+                <div id="section_stats_population" class="element-stats-page box-page">
+                    <div class="element-stats-box-1">
+                        <select class="w3-select" name="option">
+                            <option value="" disabled selected>Population</option>
+                            <option value="1">Option 1</option>
+                            <option value="2">Option 2</option>
+                            <option value="3">Option 3</option>
+                        </select>
+                    </div>
+                    <div class="box element-stats-box-2">
+                        <div><h2 class="commune-name">Commune de lubumbashi </h2></div>
+                        <div class="inner-element-stats-box-2">
+                            <div class="element-stats-box-2-part-1">
+                                <div class="total">
+                                    <div><img src="img/person-team-svgrepo-com.svg" alt="" height="50" width="50"></div>
+                                    <div>
+                                        <div class="Ttl">Population total</div>
+                                        <div class="stat-numbers"><h2>120000</h2></div>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            <div class="element-stats-box-2-part-2" style="height: 150px;">
+                                <canvas id="Chart-by-stats"></canvas>
+                            </div>
+                            <div class="element-stats-box-2-part-3">
+                                <div class="homme">
+                                    <span></span>
+                                    <span>
+                                        <div class="M sexe">Homme</div>
+                                        <div class="stat-numbers"><h2>120000</h2></div>
+                                    </span>
+                                    
+                                </div>
+                                <div class="femme">
+                                    <span></span>
+                                    <span>
+                                        <div class="F sexe">Femme</div>
+                                        <div class="stat-numbers"><h2>190000</h2></div>
+                                    </span>   
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <div class="element-stats-box-2-part-4">
+                        <table>
+                            <tr class="tr">
+                                <th colspan="4" ><h2>Par Quartier</h2></th>
+                            </tr>
+                            <tr class="tr1">
+                              <th>Nom du Quatier</th>
+                              <th>Alphabetisation</th>
+                              <th>InAlphabet</th>
+                              <th>Totals Populations</th>
+                              
+                            </tr>
+                            <tr class="tr2">
+                              <td>Alfreds Futterkiste</td>
+                              <td>Maria Anders</td>
+                              <td>Germany</td>
+                              <td>Germany</td>
+                            </tr>
+                            <tr class="tr2">
+                              <td>Centro comercial Moctezuma</td>
+                              <td>Francisco Chang</td>
+                              <td>Mexico</td>
+                              <td>Germany</td>
+                            </tr>
+                          </table>
+                    </div>
+                   
+                </div>
+                <!-- fin partie stats du dashbord -->
             </div>
-         <!-- fi de colonne dashbord  -->
+         <!-- fin de colonne dashbord  -->
        </main>
         <!--FIN DU MAIN -->
        
@@ -186,7 +308,8 @@
 
 <!--DEBUT DES SCRIPTS -->
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script src="js/script-dashbord.js"></script>   
+<script src="js/script-dashbord.js"></script>  
+
 
 <!--FIN DES SCRIPTS --> 
 </body>

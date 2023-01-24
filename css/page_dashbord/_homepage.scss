@@ -4,20 +4,9 @@
         justify-content: $justify;
 }
 
+
 .home-page{
-    >div{
-        box-shadow: var(--primary-box-shadow);
-        background-color: var(--third-color);
-        border-radius: var(--border-raduis);
-        
-        margin: var(--margin) 0;
-        padding: var(--padding);
-        @media (max-width: 768px){
-            padding: 5px;
-        }
-        
-           
-    }
+    
     h2{
         margin: 0;
         padding: 0;
@@ -49,9 +38,13 @@
             flex-grow: 2;
             .sexe{
                 font-size: var(--primary-font-size);
+                @media (max-width: 768px){ 
+                    font-size: var(--secondary-font-size);     
+                }
             }
             .F{
                 color: var(--jaune);
+
             }
             .M{
                 color: var(--bleu);
