@@ -2,6 +2,7 @@
     background-attachment: fixed;
     color: white;
     padding: 0;
+    cursor: pointer;
 }
 
 .stats-page{
@@ -28,6 +29,7 @@
     .stats-box-cat-1{
         background-image: url('https://images.pexels.com/photos/2833373/pexels-photo-2833373.png?auto=compress&cs=tinysrgb&w=400');
         @include background-image-cat();
+
         
     }
     .stats-box-cat-2{

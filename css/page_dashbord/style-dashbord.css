@@ -174,7 +174,10 @@ header .message .close-msg {
   /* debut de la statspage*/
   /* fin de la la statspage */
   /* -----------------------------------------------------*/
-  /* debut de la statspage*/
+  /* debut de la poupulation, migration , etat cvil , education page */
+  /* fin de la la statspage */
+  /* -----------------------------------------------------*/
+  /* debut de la suivie de rescencement */
   /* fin de la la statspage */
   /* fin de la la boxpage */
   /* -----------------------------------------------------*/
@@ -232,6 +235,7 @@ header .message .close-msg {
 .container-dashbord main .col-dashbord .home-page h2 {
   margin: 0;
   padding: 0;
+  font-size: 32px;
 }
 @media (max-width: 768px) {
   .container-dashbord main .col-dashbord .home-page h2 {
@@ -265,6 +269,11 @@ header .message .close-msg {
 }
 .container-dashbord main .col-dashbord .home-page .home-box-2 .home-box-2-part-3 {
   flex-grow: 2;
+}
+.container-dashbord main .col-dashbord .home-page .home-box-2 .home-box-2-part-3 .homme, .container-dashbord main .col-dashbord .home-page .home-box-2 .home-box-2-part-3 .femme {
+  display: flex;
+  gap: 10px;
+  align-items: center;
 }
 .container-dashbord main .col-dashbord .home-page .home-box-2 .home-box-2-part-3 .sexe {
   font-size: var(--primary-font-size);
@@ -318,24 +327,28 @@ header .message .close-msg {
   background-attachment: fixed;
   color: white;
   padding: 0;
+  cursor: pointer;
 }
 .container-dashbord main .col-dashbord .stats-page .stats-box-cat-2 {
   background-image: url("https://media.istockphoto.com/id/184601450/photo/international-flags.jpg?s=612x612&w=is&k=20&c=s4zb8umsXMHfBZo-CkypfM8e3DgUswsxrbKCQkXUIUk=");
   background-attachment: fixed;
   color: white;
   padding: 0;
+  cursor: pointer;
 }
 .container-dashbord main .col-dashbord .stats-page .stats-box-cat-3 {
   background-image: url("https://images.pexels.com/photos/5212345/pexels-photo-5212345.jpeg?auto=compress&cs=tinysrgb&w=400");
   background-attachment: fixed;
   color: white;
   padding: 0;
+  cursor: pointer;
 }
 .container-dashbord main .col-dashbord .stats-page .stats-box-cat-4 {
   background-image: url("https://images.pexels.com/photos/12706222/pexels-photo-12706222.jpeg?auto=compress&cs=tinysrgb&w=400");
   background-attachment: fixed;
   color: white;
   padding: 0;
+  cursor: pointer;
 }
 .container-dashbord main .col-dashbord .element-stats-page {
   display: flex;
@@ -364,10 +377,12 @@ header .message .close-msg {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+  align-items: center;
 }
 .container-dashbord main .col-dashbord .element-stats-page .element-stats-box-2 .inner-element-stats-box-2 h2 {
   margin: 0;
   padding: 0;
+  font-size: 32px;
 }
 .container-dashbord main .col-dashbord .element-stats-page .element-stats-box-2 .inner-element-stats-box-2 .element-stats-box-2-part-1 .total {
   display: flex;
@@ -382,6 +397,11 @@ header .message .close-msg {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
+}
+.container-dashbord main .col-dashbord .element-stats-page .element-stats-box-2 .inner-element-stats-box-2 .element-stats-box-2-part-3 .homme, .container-dashbord main .col-dashbord .element-stats-page .element-stats-box-2 .inner-element-stats-box-2 .element-stats-box-2-part-3 .femme {
+  display: flex;
+  gap: 10px;
+  align-items: center;
 }
 .container-dashbord main .col-dashbord .element-stats-page .element-stats-box-2 .inner-element-stats-box-2 .element-stats-box-2-part-3 .sexe {
   text-align: left;
@@ -413,10 +433,66 @@ header .message .close-msg {
   background-color: var(--third-color);
   border-radius: var(--border-raduis);
 }
+.container-dashbord main .col-dashbord .tr1 th {
+  text-align: left;
+}
 .container-dashbord main .col-dashbord .tr2 {
   box-shadow: var(--primary-box-shadow);
   background-color: var(--third-color);
   border-radius: var(--border-raduis);
+  transition: all 0.3s ease-in-out;
+}
+.container-dashbord main .col-dashbord .tr2:hover {
+  background-color: var(--second-color);
+  box-shadow: none;
+}
+.container-dashbord main .col-dashbord progress {
+  border-radius: var(--border-raduis);
+  width: 100%;
+  height: 15px;
+  margin-left: -11.5%;
+  border: 1px solid rgba(0, 0, 0, 0.603);
+}
+.container-dashbord main .col-dashbord progress::-webkit-progress-bar {
+  background-color: var(--second-color);
+  border-radius: var(--border-raduis);
+}
+.container-dashbord main .col-dashbord progress::-webkit-progress-value {
+  background-color: var(--primary-color);
+  border-radius: var(--border-raduis);
+}
+.container-dashbord main .col-dashbord progress::-moz-progress-bar {
+  /* style rules */
+  background-color: var(--primary-color);
+  border-radius: var(--border-raduis);
+}
+.container-dashbord main .col-dashbord progress::-moz-progress-value {
+  /* style rules */
+  background-color: var(--second-color);
+  border-radius: var(--border-raduis);
+}
+.container-dashbord main .col-dashbord .suivi-page .suivi-box-1 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+@media (max-width: 768px) {
+  .container-dashbord main .col-dashbord .suivi-page .suivi-box-1 {
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr;
+    gap: 5px;
+  }
+}
+.container-dashbord main .col-dashbord .suivi-page .suivi-box-1 .box {
+  box-shadow: var(--primary-box-shadow);
+  background-color: var(--third-color);
+  border-radius: var(--border-raduis);
+  margin: var(--margin) 0;
+  padding: var(--padding) 100px;
+}
+.container-dashbord main .col-dashbord .suivi-page .suivi-box-1 .suivi-box-1-part-1 {
+  background-color: var(--primary-color);
+  color: white;
 }
 
 /* FIN DE MAIN */
@@ -435,8 +511,7 @@ header .message .close-msg {
 @media (min-width: 768px) {
   .close-sidebar {
     left: -250px !important;
-    -webkit-animation-name: sideshow;
-            animation-name: sideshow;
+    /*animation-name: sideshow;*/
     -webkit-animation-duration: 4s;
             animation-duration: 4s;
   }
@@ -456,39 +531,114 @@ header .message .close-msg {
 
 @-webkit-keyframes sideshow {
   0% {
-    left: -250px;
+    left: 250px;
   }
   25% {
-    left: -125px;
+    left: 125px;
   }
   50% {
     left: 0px;
   }
   75% {
-    left: 125px;
+    left: -125px;
   }
   100% {
-    left: 250px;
+    left: -250px;
   }
 }
 
 @keyframes sideshow {
   0% {
-    left: -250px;
+    left: 250px;
   }
   25% {
-    left: -125px;
+    left: 125px;
   }
   50% {
     left: 0px;
   }
   75% {
-    left: 125px;
+    left: -125px;
   }
   100% {
-    left: 250px;
+    left: -250px;
   }
 }
 .rotate {
   transform: rotate(90deg);
+}
+
+#overlay {
+  position: fixed; /* Sit on top of the page content */
+  display: none; /* Hidden by default */
+  width: 100%; /* Full width (cover the whole page) */
+  height: 100%; /* Full height (cover the whole page) */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.733); /* Black background with opacity */
+  z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+  cursor: progress; /* Add a pointer on hover */
+}
+
+#text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 25px;
+  color: black;
+  font-weight: bold;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+
+#loader {
+  width: 8px;
+  height: 48px;
+  display: block;
+  margin: auto;
+  left: -20px;
+  position: relative;
+  border-radius: 4px;
+  box-sizing: border-box;
+  -webkit-animation: animloader 1s linear infinite alternate;
+          animation: animloader 1s linear infinite alternate;
+}
+
+@-webkit-keyframes animloader {
+  0% {
+    box-shadow: 20px 0 rgba(255, 122, 122, 0.25), 40px 0 var(--bleu), 60px 0 var(--jaune);
+  }
+  50% {
+    box-shadow: 20px 0 var(--rouge), 40px 0 rgba(161, 192, 248, 0.25), 60px 0 var(--jaune);
+  }
+  100% {
+    box-shadow: 20px 0var --rouge, 40px 0 var(--bleu), 60px 0 rgba(255, 242, 124, 0.25);
+  }
+}
+
+@keyframes animloader {
+  0% {
+    box-shadow: 20px 0 rgba(255, 122, 122, 0.25), 40px 0 var(--bleu), 60px 0 var(--jaune);
+  }
+  50% {
+    box-shadow: 20px 0 var(--rouge), 40px 0 rgba(161, 192, 248, 0.25), 60px 0 var(--jaune);
+  }
+  100% {
+    box-shadow: 20px 0var --rouge, 40px 0 var(--bleu), 60px 0 rgba(255, 242, 124, 0.25);
+  }
+}
+#slash-screen {
+  position: fixed; /* Sit on top of the page content */
+  display: none; /* Hidden by default */
+  width: 100%; /* Full width (cover the whole page) */
+  height: 100%; /* Full height (cover the whole page) */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("img/background-congo-connexion.png"); /* Black background with opacity */
+  z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+  cursor: progress; /* Add a pointer on hover */
 }/*# sourceMappingURL=style-dashbord.css.map */
