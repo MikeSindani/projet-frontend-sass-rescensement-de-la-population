@@ -77,6 +77,10 @@ header{
                 /* debut de la suivie de rescencement */ 
                 @import "suiviPage";
                 /* fin de la la statspage */
+/* -----------------------------------------------------*/ 
+                /* debut de la suivie de rescencement */ 
+                @import "agentpage";
+                /* fin de la la statspage */
 
              /* fin de la la boxpage */
  /* -----------------------------------------------------*/ 
@@ -139,6 +143,7 @@ header{
         bottom: 0;
         background-color: rgba(255, 255, 255, 0.733); /* Black background with opacity */
         z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+        backdrop-filter: blur(3px);
         cursor:progress; /* Add a pointer on hover */
         
 }

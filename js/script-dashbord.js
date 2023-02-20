@@ -1,4 +1,5 @@
-
+// var  for set interval 
+const time_set_interval = 500
 
 
 function on() {
@@ -51,17 +52,75 @@ const dropdown = document.querySelector(".dropdown")
 var btn_stats_population = document.querySelector("#btn_stats_population")
 var btn_stats_population_2 = document.querySelector("#btn_stats_population_2")
 const btn_Suivi_de_Rescensement = document.querySelector("#btn_Suivi_de_Rescensement")
+const btn_Suivi_de_fiche = document.querySelector("#btn_Suivi_de_fiche")
+const btn_gestion_agent = document.querySelector("#btn_gestion_agent")
+
 /* SECTION */ 
 const section_home = document.querySelector("#section_home")
 const section_stats = document.querySelector("#section_stats")
 const section_stats_element = document.querySelector("#section_stats_element")
 const section_Suivi_de_Rescensement = document.querySelector("#section_Suivi_de_Rescensement")
+const section_Suivi_de_fiche = document.querySelector("#section_Suivi_de_fiche")
 // FONCTION SECTION 
-function function_section(v_home,v_stats, v_ele_stats,v_suivi){
+function function_section(v_home,v_stats,v_ele_stats,v_suivi_r,v_suivi_f){
+
   section_home.style.display = v_home
   section_stats.style.display = v_stats
   section_stats_element.style.display= v_ele_stats
-  section_Suivi_de_Rescensement.style.display = v_suivi
+  section_Suivi_de_Rescensement.style.display = v_suivi_r
+  section_Suivi_de_fiche.style.display = v_suivi_f
+}
+
+function function_sub_menu(sub_menu_stats,sub_menu_agent){
+  if(sub_menu_stats == true){
+      subMenuStats.classList.toggle("sub-menu-1")
+      dropdown.classList.toggle("rotate")
+  }
+  else{
+    subMenuStats.classList.add("sub-menu-1")  
+    dropdown.classList.add("rotate")
+  }
+  if(sub_menu_agent == true){
+    subMenuAgent.classList.toggle("sub-menu-2")
+    dropdown.classList.toggle("rotate")
+  }else{
+    subMenuAgent.classList.add("sub-menu-2")
+    dropdown.classList.add("rotate")
+  }
+}
+function function_btn_section(v_btn_home,v_btn_sub_stats,v_btn_suivi_r,v_btn_suivi_f,v_btn_agent){
+      if(v_btn_home == true){
+        btn_home.classList.add("bg-primary-color")
+      }
+      else{
+        btn_home.classList.remove("bg-primary-color")
+      }
+      if(v_btn_sub_stats == true){
+        sub_btn_stats.classList.add("bg-primary-color")
+      }
+      else{
+        sub_btn_stats.classList.remove("bg-primary-color")
+      }
+      if(v_btn_suivi_r == true){
+        btn_Suivi_de_Rescensement.classList.add("bg-primary-color")
+      }
+      else{
+        btn_Suivi_de_Rescensement.classList.remove("bg-primary-color")
+      }
+      if(v_btn_suivi_f == true){
+        btn_Suivi_de_fiche.classList.add("bg-primary-color")
+      }
+      else{
+        btn_Suivi_de_fiche.classList.remove("bg-primary-color")
+      }
+      if(v_btn_agent == true){
+        sub_btn_agent.classList.add("bg-primary-color")
+      }
+      else{
+        sub_btn_agent.classList.remove("bg-primary-color")
+      }
+      
+  
 }
   
 
@@ -71,51 +130,47 @@ btn_home.addEventListener("click",()=>{
    on() // overlay on 
   setTimeout(() => {
         // SECTION THIS 
-      function_section("grid","none","none","none")
+      function_section("grid","none","none","none","none")
+      function_sub_menu(false,false)
       // BOUTO  AUTRE 
-      btn_home.classList.add("bg-primary-color")
-      sub_btn_stats.classList.remove("bg-primary-color")
-      btn_stats_population.style.fontWeight="normal"
-      btn_stats_population.style.fontSize="inherit"
-      btn_Suivi_de_Rescensement.classList.remove("bg-primary-color")
+      function_btn_section(true,false,false,false,false)
       off() // overlay off 
-  }, 1000);
+  }, time_set_interval);
   
 })
 /* FIN BOUTON HOME */ 
 /* DEBUT BOUTON SUB MENU STATISTIQUE */ 
 sub_btn_stats.addEventListener("click",()=>{
-      on()
+        on()
       setTimeout(() => {
-        subMenuStats.classList.toggle("sub-menu-1")
-        dropdown.classList.toggle("rotate")
-        // BOTTON AUTRE
-        btn_home.classList.remove("bg-primary-color")
-        btn_Suivi_de_Rescensement.classList.remove("bg-primary-color")
-        btn_stats_population.style.fontWeight="normal"
-        btn_stats_population.style.fontSize="inherit"
         // * BOTTON THIS
-        sub_btn_stats.classList.add("bg-primary-color")
+        
+        function_sub_menu(true,false)
+         // BOTTON AUTRE 
+         function_btn_section(false,true,false,false,false)
 
         // SECTION AUTRE 
-        function_section("none","grid","none","none")
+        function_section("none","grid","none","none","none")
+        
         off()
-      }, 500);  
+      }, time_set_interval);  
 })
 
 /* FIN BOUTON SUB MENU STATISTIQUE */ 
 /*  DEBUT BOUTON SUB MENU AGENT */ 
 sub_btn_agent.addEventListener("click",()=>{
-    subMenuAgent .classList.toggle("sub-menu-2")
-    dropdown.classList.toggle("rotate")
-    sub_btn_agent.classList.toggle("bg-secondary-color")
-    btn_Suivi_de_Rescensement.classList.remove("bg-primary-color")
+    
+    function_section("none","none","none","none","none")
+    function_sub_menu(false,true)
+    // BOTTON AUTRE 
+    function_btn_section(false,false,false,false,true)
 
 })
 /* FIN BOUTON SUB MENU AGENT */
 /* DEBUT BOUTON  STATISTIQUE POPULATION  */ 
 
 function function_chart_stats_element(data1){
+
   const ctx4 = document.querySelector('#Chart-by-stat');
   new Chart(ctx4, {
     type: 'pie',
@@ -135,70 +190,96 @@ function function_chart_stats_element(data1){
     } 
   });
 }
+
+
+// BTN POUPULATION  STATS 
 function function_btn_stats_population(){
+
+  // BOTTON AUTRE 
+  function_btn_section(false,true,false,false,false)
+  // SECTION THIS 
+  function_section("none","none","flex","none","none")
   
-  //  BOUTON AUTRE 
-  btn_home.classList.remove("bg-primary-color")
-  sub_btn_stats.classList.add("bg-primary-color")
-  btn_Suivi_de_Rescensement.classList.remove("bg-primary-color")
-  //*BOUTON THIS 
-  btn_stats_population.style.fontWeight="bold"
-  btn_stats_population.style.fontSize="18px"
-  // SECTION AUTRE 
-  section_home.style.display = "none"
-  section_stats.style.display = "flex"
   section_stats.style.gap = "3px"
   document.querySelector(".stats-box-1").style.padding="0"
-  section_Suivi_de_Rescensement.style.display = "none"
+
   //* SECTION THIS 
-  section_stats_element.style.display="flex"
+  //section_stats_element.style.display="flex"
 }
-btn_stats_population.addEventListener("click",()=>{
+/*function btn_change_style(element){
+  
+  if (element == 'Population'){
+    
+  }
+      
+}*/
+
+// btn population 
+function btn_stats_element(element){
+  //.style.fontWeight="normal" 
+  $("#"+element).css("font-weight","bold")
+      $("#"+element).css("font-size","16px")
+  //this.style.fontSize="inherit"
+  /*
+  var resetCanvas = function(){
+    
+    canvas = document.querySelector('#results-graph');
+    ctx = canvas.getContext('2d');
+    ctx.canvas.width = $('#graph').width(); // resize to parent width
+    ctx.canvas.height = $('#graph').height(); // resize to parent height
+    var x = canvas.width/2;
+    var y = canvas.height/2;
+    ctx.font = '10pt Verdana';
+    ctx.textAlign = 'center';
+    ctx.fillText('This text is centered on the canvas', x, y);
+  };*/
+  
+    $('#Chart-by-stat').remove(); // this is my <canvas> element
+    $('#graph-container').append('<canvas id="Chart-by-stat"></canvas>');
+
   on()
   setTimeout(() => {
     function_btn_stats_population()
     function_chart_stats_element([120000, 180000])
     off()
-  }, 1000);
+  }, time_set_interval);
   
   
-})
-btn_stats_population_2.addEventListener("click",()=>{
-  on()
-  setTimeout(() => {
-    function_btn_stats_population()
-    function_chart_stats_element([120000, 190000])
-    off()
-  }, 1000);
-  
+}
 
-  
-
-})
 
 /* FIN BOUTON STATISTIQUE POPULATION  */  
-/* DEBUT BOUTON HOME */ 
+/* DEBUT BOUTON SUIVI RESCENCEMENT  */ 
 btn_Suivi_de_Rescensement.addEventListener("click",()=>{
   on() // overlay om
   setTimeout(() => {
     // * SECTION THIS 
-    section_Suivi_de_Rescensement.style.display = "block"
-    // SECTION AUTRES 
-    section_stats.style.display = "none"
-    section_stats_element.style.display="none"
-    section_home.style.display = "none"
-    // BOUTON THIS 
-    btn_Suivi_de_Rescensement.classList.add("bg-primary-color")
-    // BOUTO  AUTRE 
-    btn_home.classList.remove("bg-primary-color")
-    sub_btn_stats.classList.remove("bg-primary-color")
-    btn_stats_population.style.fontWeight="normal"
-    btn_stats_population.style.fontSize="inherit"
+    function_section("none","none","none","block","none")
+    function_sub_menu(false,false)
+     // BOTTON AUTRE 
+    function_btn_section(false,false,true,false,false) 
+  
       off() // overlay off
-  }, 500);
+  }, time_set_interval);
   
 })
-/* FIN BOUTON HOME */ 
+/* FIN BOUTON SUIVI RESCENCEMENT */ 
+/* DEBUT BOUTON SUIVI FICHE  */ 
+btn_Suivi_de_fiche.addEventListener("click",()=>{
+  on() // overlay om
+  setTimeout(() => {
+    // * SECTION THIS 
+    function_section("none","none","none","none","block")
+    function_sub_menu(false,false)
+     // BOTTON AUTRE 
+    function_btn_section(false,false,false,true,false) 
+    
+    function_sub_menu(false,false)
+      off() // overlay off
+  }, time_set_interval);
+  
+})
+/* FIN BOUTON SUIVI FICHE */ 
 /* fin de side bar menu hamberger */ 
 /* ####################################################################*/
 /* debut du code pour le message */ 
@@ -278,6 +359,3 @@ const ctx = document.getElementById('Chart-by-Commune');
       }
     }
   });
-
- 
- 
