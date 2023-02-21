@@ -10,8 +10,8 @@ function off() {
   document.getElementById("overlay").style.display = "none";
 }
 setTimeout(()=>{
-   
-},3000)
+   document.getElementById("slash-screen").style.display = "none";
+},5000)
 
 
 /* ####################################################################*/
@@ -49,11 +49,12 @@ const subMenuStats = document.querySelector(".sub-menu-1")
 const sub_btn_agent = document.querySelector(".sub-btn-2")
 const subMenuAgent = document.querySelector(".sub-menu-2")
 const dropdown = document.querySelector(".dropdown")
-var btn_stats_population = document.querySelector("#btn_stats_population")
-var btn_stats_population_2 = document.querySelector("#btn_stats_population_2")
+//var btn_stats_population = document.querySelector("#btn_stats_population")
+//var btn_stats_population_2 = document.querySelector("#btn_stats_population_2")
 const btn_Suivi_de_Rescensement = document.querySelector("#btn_Suivi_de_Rescensement")
 const btn_Suivi_de_fiche = document.querySelector("#btn_Suivi_de_fiche")
 const btn_gestion_agent = document.querySelector("#btn_gestion_agent")
+const btn_gestion_zone = document.querySelector("#btn_gestion_zone")
 
 /* SECTION */ 
 const section_home = document.querySelector("#section_home")
@@ -61,14 +62,21 @@ const section_stats = document.querySelector("#section_stats")
 const section_stats_element = document.querySelector("#section_stats_element")
 const section_Suivi_de_Rescensement = document.querySelector("#section_Suivi_de_Rescensement")
 const section_Suivi_de_fiche = document.querySelector("#section_Suivi_de_fiche")
+const section_gestion_agent = document.querySelector("#section_agent")
+const section_gestion_agent_element = document.querySelector("#section_gestion_agent_element")
+const section_gestion_zone = document.querySelector("#section_gestion_zone")
 // FONCTION SECTION 
-function function_section(v_home,v_stats,v_ele_stats,v_suivi_r,v_suivi_f){
+function function_section(v_home,v_stats,v_ele_stats,v_suivi_r,v_suivi_f,v_gestion_agent,v_gestion_agent_ele,v_gestion_zone){
 
   section_home.style.display = v_home
   section_stats.style.display = v_stats
   section_stats_element.style.display= v_ele_stats
   section_Suivi_de_Rescensement.style.display = v_suivi_r
   section_Suivi_de_fiche.style.display = v_suivi_f
+  section_gestion_agent.style.display = v_gestion_agent
+  section_gestion_agent_element.style.display = v_gestion_agent_ele
+  section_gestion_zone.style.display = v_gestion_zone
+
 }
 
 function function_sub_menu(sub_menu_stats,sub_menu_agent){
@@ -88,7 +96,7 @@ function function_sub_menu(sub_menu_stats,sub_menu_agent){
     dropdown.classList.add("rotate")
   }
 }
-function function_btn_section(v_btn_home,v_btn_sub_stats,v_btn_suivi_r,v_btn_suivi_f,v_btn_agent){
+function function_btn_section(v_btn_home,v_btn_sub_stats,v_btn_suivi_r,v_btn_suivi_f,v_btn_agent,v_btn_gestion_agent_ele,v_btn_gestion_zone){
       if(v_btn_home == true){
         btn_home.classList.add("bg-primary-color")
       }
@@ -113,11 +121,19 @@ function function_btn_section(v_btn_home,v_btn_sub_stats,v_btn_suivi_r,v_btn_sui
       else{
         btn_Suivi_de_fiche.classList.remove("bg-primary-color")
       }
-      if(v_btn_agent == true){
+      
+      if(v_btn_agent == true || v_btn_gestion_agent_ele == true){
         sub_btn_agent.classList.add("bg-primary-color")
       }
       else{
         sub_btn_agent.classList.remove("bg-primary-color")
+      }
+
+      if(v_btn_gestion_zone == true ){
+        btn_gestion_zone.classList.add("bg-primary-color")
+      }
+      else{
+        btn_gestion_zone.classList.remove("bg-primary-color")
       }
       
   
@@ -130,10 +146,10 @@ btn_home.addEventListener("click",()=>{
    on() // overlay on 
   setTimeout(() => {
         // SECTION THIS 
-      function_section("grid","none","none","none","none")
+      function_section("grid","none","none","none","none","none","none","none")
       function_sub_menu(false,false)
       // BOUTO  AUTRE 
-      function_btn_section(true,false,false,false,false)
+      function_btn_section(true,false,false,false,false,false,false)
       off() // overlay off 
   }, time_set_interval);
   
@@ -147,10 +163,10 @@ sub_btn_stats.addEventListener("click",()=>{
         
         function_sub_menu(true,false)
          // BOTTON AUTRE 
-         function_btn_section(false,true,false,false,false)
+         function_btn_section(false,true,false,false,false,false,false)
 
         // SECTION AUTRE 
-        function_section("none","grid","none","none","none")
+        function_section("none","grid","none","none","none","none","none","none")
         
         off()
       }, time_set_interval);  
@@ -160,10 +176,10 @@ sub_btn_stats.addEventListener("click",()=>{
 /*  DEBUT BOUTON SUB MENU AGENT */ 
 sub_btn_agent.addEventListener("click",()=>{
     
-    function_section("none","none","none","none","none")
+    function_section("none","none","none","none","block","none","none","none")
     function_sub_menu(false,true)
     // BOTTON AUTRE 
-    function_btn_section(false,false,false,false,true)
+    function_btn_section(false,false,false,false,true,false,false)
 
 })
 /* FIN BOUTON SUB MENU AGENT */
@@ -198,7 +214,7 @@ function function_btn_stats_population(){
   // BOTTON AUTRE 
   function_btn_section(false,true,false,false,false)
   // SECTION THIS 
-  function_section("none","none","flex","none","none")
+  function_section("none","none","flex","none","none","none","none","none")
   
   section_stats.style.gap = "3px"
   document.querySelector(".stats-box-1").style.padding="0"
@@ -217,8 +233,8 @@ function function_btn_stats_population(){
 // btn population 
 function btn_stats_element(element){
   //.style.fontWeight="normal" 
-  $("#"+element).css("font-weight","bold")
-      $("#"+element).css("font-size","16px")
+  $("."+element).css("font-weight","bold")
+      $("."+element).css("font-size","16px")
   //this.style.fontSize="inherit"
   /*
   var resetCanvas = function(){
@@ -254,10 +270,10 @@ btn_Suivi_de_Rescensement.addEventListener("click",()=>{
   on() // overlay om
   setTimeout(() => {
     // * SECTION THIS 
-    function_section("none","none","none","block","none")
+    function_section("none","none","none","block","none","none","none","none")
     function_sub_menu(false,false)
      // BOTTON AUTRE 
-    function_btn_section(false,false,true,false,false) 
+    function_btn_section(false,false,true,false,false,false,false) 
   
       off() // overlay off
   }, time_set_interval);
@@ -266,20 +282,61 @@ btn_Suivi_de_Rescensement.addEventListener("click",()=>{
 /* FIN BOUTON SUIVI RESCENCEMENT */ 
 /* DEBUT BOUTON SUIVI FICHE  */ 
 btn_Suivi_de_fiche.addEventListener("click",()=>{
-  on() // overlay om
-  setTimeout(() => {
-    // * SECTION THIS 
-    function_section("none","none","none","none","block")
-    function_sub_menu(false,false)
-     // BOTTON AUTRE 
-    function_btn_section(false,false,false,true,false) 
-    
-    function_sub_menu(false,false)
-      off() // overlay off
-  }, time_set_interval);
+      on() // overlay om
+      setTimeout(() => {
+        // * SECTION THIS 
+        function_section("none","none","none","none","block","none","none","none")
+        function_sub_menu(false,false)
+        // BOTTON AUTRE 
+        function_btn_section(false,false,false,true,false,false,false) 
+        
+        function_sub_menu(false,false)
+          off() // overlay off
+      }, time_set_interval);
   
 })
 /* FIN BOUTON SUIVI FICHE */ 
+/* DEBUT BOUTON GESTION AGENT  */ 
+btn_gestion_agent.addEventListener("click",()=>{
+      on() // overlay om
+      setTimeout(() => {
+        // * SECTION THIS 
+        function_section("none","none","none","none","none","block","none","none")
+        // BOTTON AUTRE 
+        function_btn_section(false,false,false,false,true,false,false) 
+        
+          off() // overlay off
+      }, time_set_interval);
+  
+})
+/* FIN BOUTON GESTION AGENT */ 
+/* DEBUT BOUTON GESTION AGENT ELEMENT */ 
+function btn_gestion_agent_element(element){
+        on() // overlay om
+        setTimeout(() => {
+          // * SECTION THIS 
+          function_section("none","none","none","none","none","none","block","none")
+          // BOTTON AUTRE 
+          function_btn_section(false,false,false,false,false,true,false) 
+          
+          
+            off() // overlay off
+        }, time_set_interval);
+  
+}
+/* DEBUT BOUTON GESTION zONE  */ 
+btn_gestion_zone.addEventListener("click",()=>{
+      on() // overlay om
+      setTimeout(() => {
+        // * SECTION THIS 
+        function_section("none","none","none","none","none","none","none","block")
+        // BOTTON AUTRE 
+        function_btn_section(false,false,false,false,false,false,true) 
+        function_sub_menu(false,false)
+          off() // overlay off
+      }, time_set_interval);
+  
+})
 /* fin de side bar menu hamberger */ 
 /* ####################################################################*/
 /* debut du code pour le message */ 

@@ -87,10 +87,10 @@
                         <!--botton statsistique -->
                             <!--dropdown  sub menu-->
                             <div class="sub-menu sub-menu-1" >
-                                <div id="Population"  onclick="btn_stats_element('Population')" class="sub-item-menu">Population</div>
-                                <div id="Education" onclick="btn_stats_element('Education')" class="sub-item-menu">Education</div>
-                                <div id="Migration" onclick="btn_stats_element('Migration')" class="sub-item-menu">Migration</div>
-                                <div id="Etat-Civil" onclick="btn_stats_element('Etat-Civil')" class="sub-item-menu">Etat Civil</div>
+                                <div onclick="btn_stats_element('Population')" class="Population sub-item-menu">Population</div>
+                                <div onclick="btn_stats_element('Education')" class="Education sub-item-menu">Education</div>
+                                <div onclick="btn_stats_element('Migration')" class="Migration sub-item-menu">Migration</div>
+                                <div onclick="btn_stats_element('Etat-Civil')" class="Etat-Civil sub-item-menu">Etat Civil</div>
                             </div>
                         <!--botton Suivi de Rescensement -->
                         <div id="btn_Suivi_de_Rescensement" class="items">  <i class="fas fa-eye"></i></i> Suivi de Rescensement</div>
@@ -101,9 +101,9 @@
                         </div>
                         <!--dropdown  sub menu-->
                         <div class="sub-menu sub-menu-2">
-                            <div class="sub-item-menu">Agent Resenceur</div>
-                            <div class="sub-item-menu">Agent Controleur</div>
-                            <div class="sub-item-menu">Agent Codificateur</div>  
+                            <div onclick="btn_gestion_agent_element('Resenceur')" class="sub-item-menu">Agent Resenceur</div>
+                            <div onclick="btn_gestion_agent_element('Controleur')" class="sub-item-menu">Agent Controleur</div>
+                            <div onclick="btn_gestion_agent_element('Codificateur')" class="sub-item-menu">Agent Codificateur</div>  
                         </div>
                         <div id="btn_gestion_zone" class="items"><i class="fas fa-map-location-dot"></i> Gestion des Zones</div>
                     </div>
@@ -150,14 +150,14 @@
                 </div>
  <!-- !##################################################################section########################################################## -->         
                 <!-- debut partie stat page du dashbord -->
-                <div id="section_home" class="home-page box-page " style="display: none;">
+                <div id="section_home" class="home-page box-page " style="display: grid;">
                     <!-- dubut home-box-1 -->
                     <div class="home-box-1 box">
                         <div class="home-box-1-part-1">
                             <img src="img/person-team-svgrepo-com.svg" alt="" height="35" width="35">
                         </div>
                         <div class="home-box-1-part-2"><h2>Population total de Lubumbashi:</h2></div>
-                        <div class="home-box-1-part-3"><h2> 4 370 000 </h2></div>
+                        <div class="home-box-1-part-3"><h2 class="counter" data-target="4370000"></h2></div>
                     </div>
                     
                     <!-- dubut home-box-2 -->
@@ -209,28 +209,28 @@
                             <div class="stats-box-1-part-3"><h2> 4 370 000 </h2></div>
                         </div>
                         <!--POPULATION-->
-                        <div id="btn_stats_population_2" class="btn_stats_population stats-box-cat-1 box">
+                        <div onclick="btn_stats_element('Population')" id="btn_stats_population_2" class="btn_stats_population stats-box-cat-1 box">
                             <div class="overlay">
                                 <div class="type">Population</div>
                                <div><h3 class="nbrs-Population">2000000</h3></div>
                             </div>  
                         </div>
                         <!-- MIGRATION -->
-                        <div class="stats-box-cat-2 box">
+                        <div onclick="btn_stats_element('Migration')" class="stats-box-cat-2 box">
                             <div class="overlay">
                                 <div class="type">Migration</div>
                                 <div><h3 class="nbrs-migration">120000</h3></div>
                             </div>    
                         </div>
                         <!--EDUCATION-->
-                        <div class="stats-box-cat-3 box">
+                        <div onclick="btn_stats_element('Education')" class="stats-box-cat-3 box">
                             <div class="overlay">
                                 <div class="type">Education</div>
                                 <div><h3 class="nbrs-education">250000</h3></div>
                             </div> 
                         </div>
                         <!--ETAT CIVIL -->
-                        <div class="stats-box-cat-4 box">
+                        <div onclick="btn_stats_element('Etat-Civil')" class="stats-box-cat-4 box">
                             <div class="overlay">
                                 <div class="type">Etat Civil</div>
                                 <div><h3 class="nbrs-civil">600000</h3></div>
@@ -396,30 +396,132 @@
                 <!-- fin partie stats du dashbord -->
                 <!-- !##################################################################section########################################################## -->  
                 <!-- debut partie stats du dashbord -->
-                <div id="section_agent" class="agent-page box-page " style="display:block;">
+                <div id="section_agent" class="agent-page box-page " style="display:none;">
                     <!-- dubut home-box-1 -->   
                         <!--POPULATION-->
                         <div id="btn_Agent Rescenseur_2" class=" agent-box-cat-1 box">
-                            <div class="overlay">
+                            <div onclick="btn_gestion_agent_element('Resenceur')" class="overlay">
                                 <div class="type">Agent Rescenseur</div>
                                <div><h3 class="nbrs-Population">2000000  </h3></div>
                             </div>  
                         </div>
                         <!-- MIGRATION -->
-                        <div class="agent-box-cat-2 box">
+                        <div onclick="btn_gestion_agent_element('Controlleur')" class="agent-box-cat-2 box">
                             <div class="overlay">
                                 <div class="type">Agent Controlleur</div>
                                 <div><h3 class="nbrs-migration">120000</h3></div>
                             </div>    
                         </div>
                         <!--EDUCATION-->
-                        <div class="agent-box-cat-3 box">
+                        <div onclick="btn_gestion_agent_element('Codificateur')" class="agent-box-cat-3 box">
                             <div class="overlay">
                                 <div class="type">Agent Codificateur</div>
                                 <div><h3 class="nbrs-education">250000</h3></div>
                             </div> 
                         </div>
                                              
+                </div>
+                <!-- fin partie stats du dashbord -->
+            <!-- !##################################################################section########################################################## -->  
+                <!-- debut partie stats du dashbord -->
+                <!-- debut partie stats population du dashbord -->
+                <div id="section_gestion_agent_element" class="gestion_agent_element suivi-page box-page" style="display: none;" >
+
+                    <!-- dubut home-box-1 -->
+                    <div class="gestion_agent-box-1 box">
+                        <div class="home-box-1-part-1">
+                            <img src="img/person-team-svgrepo-com.svg" alt="" height="35" width="35">
+                        </div>
+                        <div class="home-box-1-part-2"><h2>Nombre d'Agent <span id="agent-type"></span> </h2></div>
+                        <div class="home-box-1-part-3"><h2 class="counter" data-target="20000"></h2></div>
+                    </div>
+                    <div class="gestion_agent-box-2 ">
+                        <div id="btn_modal_agent" class="box gestion_agent-box-2-part-1">
+                            Ajouter un Agent
+                        </div>  
+                    </div>
+                    <div class="element-stats-box-2-part-4">
+                        <table>
+                            <tr class="tr1">
+                              <th>N Agents</th>
+                              <th>Photo</th>
+                              <th>Nom Complet</th>
+                              <th>Matricule</th>
+                              <th>Mot de passe</th>
+                              <th>Zone</th>
+                              <td> </td>                           
+                            </tr>
+                            <tr class="tr2">
+                              <td> <strong>001</strong></td>
+                              <td><img   src="img/Armoirie png.png" alt="" height="30" width="30"></td>
+                              <td>Germany</td>
+                              <td>en cours </td>
+                              <td>*******</td>
+                              <td>140/200</td>
+                              <td> <img src="svg/delete-filled-svgrepo-com.svg" alt="" height="30" width="30"></td>
+                            </tr>
+                            <tr class="tr2">
+                                <td> <strong>002</strong></td>
+                                <td><img   src="img/Armoirie png.png" alt="" height="30" width="30"></td>
+                                <td>Germany</td>
+                                <td>en cours </td>
+                                <td>*******</td>
+                                <td>140/200</td>
+                                <td> <img src="svg/delete-filled-svgrepo-com.svg" alt="" height="30" width="30"></td>
+                            </tr>
+                            
+                            
+                          </table>
+                    </div>
+                   
+                </div>
+                <!-- fin partie stats du dashbord -->
+                <!-- fin partie stats du dashbord -->
+                <!-- !##################################################################section########################################################## -->  
+                <!-- debut partie stats du dashbord -->
+                <!-- debut partie stats population du dashbord -->
+                <div id="section_gestion_zone" class="gestion_agent_element suivi-page box-page" style="display: none;" >
+
+                    <!-- dubut home-box-1 -->
+                    <div class="gestion_agent-box-1 box">
+                        <div class="home-box-1-part-1">
+                            <img src="img/person-team-svgrepo-com.svg" alt="" height="35" width="35">
+                        </div>
+                        <div class="home-box-1-part-2"><h2>Nombre des Zones</h2></div>
+                        <div class="home-box-1-part-3"><h2 class="counter" data-target="50000" ></h2></div>
+                    </div>
+                    <div class="gestion_agent-box-2 ">
+                        <div id="btn_modal_zone" class="box gestion_agent-box-2-part-1">
+                            Ajouter Une Zone
+                        </div>  
+                    </div>
+                    <div class="element-stats-box-2-part-4">
+                        <table>
+                            <tr class="tr1">
+                              <th>N Zone</th>
+                              <th>Agent Rescenseur</th>
+                              <th>Agent Controlleur</th>
+                              <th></th>                           
+                            </tr>
+                            <tr class="tr2">
+                              <td><strong>001</strong></td>
+                              <td>Maria Anders</td>
+                              <td>Germany</td>
+                              <td> <img src="svg/delete-filled-svgrepo-com.svg" alt="" height="30" width="30"></td>
+                              
+                            </tr>
+                            <tr class="tr2">
+                                <td> <strong>002</strong></td>
+                                <td>Maria Anders</td>
+                                <td>Germany</td>
+                                <td> <img src="svg/delete-filled-svgrepo-com.svg" alt="" height="30" width="30"></td>
+                                
+                            </tr>
+                            
+                            
+                          </table>
+                    </div>
+                   
                 </div>
                 <!-- fin partie stats du dashbord -->
             </div>
@@ -433,6 +535,7 @@
 <div id="overlay">
     <div id="text"><span id="loader"></span></div>
 </div>
+<!--slash screen-->
 <div id="slash-screen">
     <div id="text"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="500" height="300" viewBox="0 0 874 557"  >
         <defs>
@@ -469,12 +572,102 @@
     <span id="loader"></span>
 </div>
 </div>
+<!-- La fenêtre modale -->
+<div id="modal-zone" class="modal">
+    <!-- Le contenu de la fenêtre modale -->
+    <div class="modal-content">
+        <div class="modal-header">
+            <span class="close">&times;</span>
+            <h2>Ajouter une Zone</h2>
+        </div>
+        <!-- Ajouter votre formulaire ici -->
+        <div class="modal-body-zone">
+            <h2>002</h2>
+        </div>
+        <div class="modal-footer">
+            <div class="btn-ajoute-zone">Ajouter la Zone</div>
+        </div>
+        
+    </div>
+</div>
+
+<!-- La fenêtre modale -->
+<div id="modal-agent" class="modal">
+    <!-- Le contenu de la fenêtre modale -->
+    <div class="modal-content-agent">
+        <div class="modal-header">
+            <span class="close-agent">&times;</span>
+            <h2>Ajouter un Agent</h2>
+        </div>
+        <!-- Ajouter votre formulaire ici -->
+        <div class="modal-body-agent">
+            <div >
+                <img src="" alt="">
+            </div>
+            <form action="">
+                <label>
+                 Nom complet<br>
+                  <input autofocus placeholder='Nom complet' type='text'>
+                </label>
+                
+                <div style="display: flex;gap:5px;" >
+                    <label>
+                        Date de Naissance <br>
+                        <input autofocus placeholder='Mot de passe' type='date'>
+                      </label>
+                      <label>
+                          Lieu de Naissance<br>
+                          <input autofocus placeholder='Lieu de Naissance' type='text'>
+                      </label>
+                </div>
+                
+                <div style="display: flex;gap:5px;" >
+                    <label>
+                         Matricule <br>
+                        <input autofocus placeholder=' Matricule' type='text'>
+                      </label>
+                      <label>
+                          N Telephone<br>
+                          <input autofocus placeholder='N Telephone' type='tel'>
+                      </label>
+                </div>
+                <label>
+                    Zone <br>
+                    <select  name="option-1">
+                        <option value="" disabled selected>Population</option>
+                        <option value="1">Option 1</option>
+                        <option value="2">Option 2</option>
+                        <option value="3">Option 3</option>
+                    </select>
+                 </label>
+                <br>
+                <br>
+                <div class="modal-body-zone">
+                    <label for="">
+                        User Name <br>
+                        <h2>002</h2>
+                    </label>
+                    <label for="">
+                        Mot de passe <br>
+                        <h2>666554</h2>
+                    </label>
+                </div>
+                
+                <br>
+                <button type="submit">Ajouter l'Agent</button>       
+            </form>   
+        </div>
+        
+        
+    </div>
+</div>
 
 
 <!--DEBUT DES SCRIPTS -->
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js' integrity='sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==' crossorigin='anonymous'></script>
 <script src="js/script-dashbord.js"></script>  
+<script src="js/script-dashbord-2.js"></script>
 
 
 <!--FIN DES SCRIPTS --> 

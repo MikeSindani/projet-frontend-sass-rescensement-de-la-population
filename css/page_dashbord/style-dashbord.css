@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* #######################################################*/
 /* DEBUT DE HEADER */
 header {
@@ -128,6 +129,7 @@ header .message .close-msg {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 10px 0;
 }
 .container-dashbord main .col-navbar .sidebar .help .items-helps {
   padding: 7px 15px;
@@ -178,6 +180,10 @@ header .message .close-msg {
   /* -----------------------------------------------------*/
   /* debut de la suivie de rescencement */
   /* fin de la la statspage */
+  /* -----------------------------------------------------*/
+  /* debut de la suivie de rescencement */
+  /* fin de la la statspage */
+  /* fin de la la boxpage */
   /* -----------------------------------------------------*/
   /* debut de la suivie de rescencement */
   /* fin de la la statspage */
@@ -523,6 +529,35 @@ header .message .close-msg {
   padding: 0;
   cursor: pointer;
 }
+.container-dashbord main .col-dashbord .gestion_agent_element .box {
+  box-shadow: var(--primary-box-shadow);
+  background-color: var(--third-color);
+  border-radius: var(--border-raduis);
+  margin: var(--margin) 0;
+  padding: var(--padding) 100px;
+}
+.container-dashbord main .col-dashbord .gestion_agent_element .gestion_agent-box-1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+@media (max-width: 768px) {
+  .container-dashbord main .col-dashbord .gestion_agent_element .gestion_agent-box-1 {
+    flex-direction: column;
+  }
+}
+.container-dashbord main .col-dashbord .gestion_agent_element .gestion_agent-box-2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.container-dashbord main .col-dashbord .gestion_agent_element .gestion_agent-box-2 .gestion_agent-box-2-part-1 {
+  background-color: var(--primary-color);
+  color: white;
+  font-weight: bold;
+}
 
 /* FIN DE MAIN */
 /* #######################################################*/
@@ -587,8 +622,8 @@ header .message .close-msg {
   bottom: 0;
   background-color: rgba(255, 255, 255, 0.733); /* Black background with opacity */
   z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
-  -webkit-backdrop-filter: blur(3px);
-          backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(4px);
+          backdrop-filter: blur(4px);
   cursor: progress; /* Add a pointer on hover */
 }
 
@@ -628,6 +663,23 @@ header .message .close-msg {
 }
 #slash-screen {
   position: fixed; /* Sit on top of the page content */
+  display: block; /* Hidden by default */
+  width: 100%; /* Full width (cover the whole page) */
+  height: 100%; /* Full height (cover the whole page) */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  background-image: url("img/background-congo-connexion.png"); /* Black background with opacity */
+  background-position: left 15% bottom 50%;
+  z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+  cursor: progress; /* Add a pointer on hover */
+}
+
+/* La fenêtre modale (arrière-plan) */
+.modal {
+  position: fixed; /* Sit on top of the page content */
   display: none; /* Hidden by default */
   width: 100%; /* Full width (cover the whole page) */
   height: 100%; /* Full height (cover the whole page) */
@@ -635,7 +687,126 @@ header .message .close-msg {
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: url("img/background-congo-connexion.png"); /* Black background with opacity */
+  background-color: rgba(117, 117, 117, 0.589); /* Black background with opacity */
   z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
-  cursor: progress; /* Add a pointer on hover */
+  -webkit-backdrop-filter: blur(3px);
+          backdrop-filter: blur(3px);
+}
+
+/* Le contenu de la fenêtre modale */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0 20px;
+  width: 50vw;
+  height: 50vh;
+  border: none;
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+
+.modal-content-agent {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0 20px;
+  width: 50vw;
+  height: 100vh;
+  border: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+
+.modal-header {
+  text-align: center;
+}
+
+.modal-body-zone {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 5px;
+  background-color: var(--second-color);
+  border-radius: var(--border-raduis);
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-ajoute-zone {
+  padding: 10px 40px;
+  margin: 20px 0;
+  color: var(--third-color);
+  background-color: var(--primary-color);
+  border-radius: var(--border-raduis);
+}
+
+.modal-body-agent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.modal-body-agent form label {
+  font-size: 12px;
+  margin: 10px 0;
+}
+.modal-body-agent form label input, .modal-body-agent form label select {
+  padding: 15px;
+  border-radius: 10px;
+  border: none;
+  background-color: var(--second-color);
+  width: 41vw;
+}
+@media (max-width: 768px) {
+  .modal-body-agent form label input, .modal-body-agent form label select {
+    width: 250px;
+  }
+}
+.modal-body-agent form div input {
+  width: 20vw;
+}
+.modal-body-agent form button {
+  padding: 10px 40px;
+  margin: 20px 0;
+  background-color: var(--primary-color);
+  border: none;
+  border-radius: 10px;
+  color: var(--third-color);
+  position: relative;
+  left: 25%;
+  cursor: pointer;
+}
+@media (max-width: 768px) {
+  .modal-body-agent form button {
+    left: 15%;
+  }
+}
+
+/* Le bouton fermer (x) */
+.close, .close-agent {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.close-agent:hover,
+.close-agent:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
 }/*# sourceMappingURL=style-dashbord.css.map */
